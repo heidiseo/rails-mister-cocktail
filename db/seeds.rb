@@ -15,5 +15,5 @@ drinks = JSON.parse(drinks_list)
 drinks["drinks"].each do |drink|
   Ingredient.create(name: drink["strIngredient1"])
 end
-Cocktail.create(name: "Mojito", ingredient: "rum")
+
 
