@@ -2,25 +2,25 @@
 
 A website that allows you to create, read, update and delete cocktails.
 
-##Getting Started
+## Getting Started
 
-###Prerequisites
+### Prerequisites
 
 `brew install yarn`
 
 `yarn add bootstrap jquery popper.js`
 
 
-###Installing
+### Installing
 
 Bundle install as we added autoprefixer-rails, font-awesome-sass and simple_form gems
 
 `bundle install`
 
 
-##Ruby Version
+## Ruby Version
 Ruby 2.6.3.
 
-##System Dependencies
+## System Dependencies
 Javascript dependencies of Bootstrap and Jquery popper
 
