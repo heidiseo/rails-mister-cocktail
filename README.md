@@ -1,24 +1,26 @@
-# README
+# Mister Cocktail
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A website that allows you to create, read, update and delete cocktails.
 
-Things you may want to cover:
+##Getting Started
 
-* Ruby version
+###Prerequisites
 
-* System dependencies
+`brew install yarn`
 
-* Configuration
+`yarn add bootstrap jquery popper.js`
 
-* Database creation
 
-* Database initialization
+###Installing
 
-* How to run the test suite
+Bundle install as we added autoprefixer-rails, font-awesome-sass and simple_form gems
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle install`
 
-* Deployment instructions
 
-* ...
+##Ruby Version
+Ruby 2.6.3.
+
+##System Dependencies
+Javascript dependencies of Bootstrap and Jquery popper
+
