@@ -1,0 +1,6 @@
+<div class="edit-cocktail-input">
+  <h1 style="color: #FF7010;" class="text-center">Edit <%= @cocktail.name %></h1>
+  <%= render 'form', cocktail: @cocktail %>
+
+
+<div class="btn-cancel"><%= link_to "Cancel", cocktail_path(@cocktail), class:"link-text"%></div>

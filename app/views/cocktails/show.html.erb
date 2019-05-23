@@ -2,25 +2,38 @@
 
 <div class="box text-center bg-white mt-5">
   <div class="d-flex">
+    <div class="cocktail-photo">
       <%= cl_image_tag @cocktail.photo, class:"card-individual"%>
-      <div class="card-content text-left">
-        <h1 class="text-info"><%= @cocktail.name %></h1>
-        <h3>Ingredients</h3>
-        <ul class="mt-5 list-group">
-          <% @cocktail.doses.each do |dose| %>
-            <div class="d-flex align-items-center">
-                <li class="list list-group-item"><%= dose.description %> <%= dose.ingredient.name %></li>
-                <p class="m-0 ml-3"><%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="far fa-trash-alt trash"></i>
-                  <% end %>
-                </p>
-            </div>
-          <% end %>
-        </ul>
-        <div class="button text-center">
-          <%= link_to "Add doses", new_cocktail_dose_path(@cocktail), class: "btn btn-success text-center" %>
-          <%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-primary text-center"%>
-        </div>
+      <br>
+      <div class="btn-edit-cocktail">
+        <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class:"btn btn-primary" %>
+      </div>
+      <br>
+      <div class="btn-delete-cocktail">
+        <%= link_to "Delete cocktail", cocktails_path, method: :delete %>
+      </div>
+    </div>
+    <div class="card-content text-left">
+      <h1 class="text-info"><%= @cocktail.name %></h1>
+      <h3>Ingredients</h3>
+      <ul class="mt-5 list-group">
+        <% @cocktail.doses.each do |dose| %>
+          <div class="d-flex align-items-center">
+              <li class="list list-group-item"><%= dose.description %> <%= dose.ingredient.name %></li>
+              <p class="m-0 ml-3"><%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt trash"></i>
+                <% end %>
+              </p>
+          </div>
+        <% end %>
+      </ul>
+      <br>
+      <br>
+      <div class="button text-center">
+        <%= link_to "Add doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary text-center" %>
+        <br>
+        <br>
+        <%= link_to "Back to all cocktails", cocktails_path, class: "text-center"%>
       </div>
     </div>
   </div>

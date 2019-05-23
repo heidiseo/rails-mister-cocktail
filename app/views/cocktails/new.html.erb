@@ -1,11 +1,6 @@
-<div class="box text-center bg-white mt-5">
-<%= simple_form_for(@cocktail) do |f| %>
-  <h1>Add a new cocktail!</h1>
-  <%= f.input :name %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Add", class: "btn btn-primary" %>
-  <%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-warning" %>
-<% end %>
+<div class="new-cocktail-input">
+  <h1 class="text-center" style="color: #FF7010;">Add a new cocktail!</h1>
+    <%= render 'form', cocktail: @cocktail %>
+    <div class="btn-cancel"><%= link_to "Cancel", cocktails_path, class:"link-text"%></div>
 </div>
 
