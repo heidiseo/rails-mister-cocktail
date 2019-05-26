@@ -7,7 +7,7 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "destroying"
+# puts "destroying"
 Cocktail.destroy_all
 Ingredient.destroy_all
 
@@ -16,6 +16,14 @@ drinks_list = open(url).read
 drinks = JSON.parse(drinks_list)
 drinks["drinks"].each do |drink|
   ingredient_list = Ingredient.new(name: drink["strIngredient1"])
+  ingredient_list.save!
+end
+
+url_soft_drinks = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'
+soft_drink_list = open(url_soft_drinks).read
+soft_drinks = JSON.parse(soft_drink_list)
+soft_drinks["drinks"].each do |drink|
+  ingredient_list = Ingredient.new(name: drink["strDrink"])
   ingredient_list.save!
 end
 puts "Finished!"
